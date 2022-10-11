@@ -1,0 +1,6 @@
+app:
+  url: http://localhost:12345
+  healthChecker:
+    cronExpression: "*/10 * * * * *"
+  healthAggregator:
+    cronExpression: "0 0/2 * * * *"
