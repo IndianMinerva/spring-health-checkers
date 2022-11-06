@@ -20,15 +20,12 @@ public class ScheduledTasks {
     @Autowired
     private AppStateRepo repo;
 
-    //	@Scheduled(cron = "*/10 * * * * *")  //every 10 seconds
     @Scheduled(cron = "${app.healthChecker.cronExpression}")  //every 10 seconds
     public void checkHealth() {
         AppHealth appHealth = healthCheckerService.persistAppState();
         log.info("Health-check record inserted STATUS: " + appHealth.getStatus());
     }
 
-
-    //	@Scheduled(cron = "0 0/2 * * * *")  //every 2 minutes
     @Scheduled(cron = "${app.healthAggregator.cronExpression}")  //every 2 minutes
     public void aggregateHealth() {
         AggregatedAppHealth aggregatedAppHealth = healthCheckerService.notifyAggregatedAppHealth();
