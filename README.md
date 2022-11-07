@@ -21,3 +21,7 @@ The other scheduler gets invoked every 2 minutes and aggregates the unprocessed 
 - Have various ways to notify the admin about the unreachability of the magnificient-app E.g: Queue, REST call, Mail, SMS  
 - Mocking the interactions with the python application
 - using an embedded MongoDB to test the insertion of the records using flapdoodle and writing a few @DataMongoTest-s
+
+
+#### Follow the commands to be executed here to create a docker build
+- mvn compile jib:dockerBuild
